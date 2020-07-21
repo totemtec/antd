@@ -1,3 +1,4 @@
+import React from 'react';
 import { Table, Popconfirm, Button } from 'antd';
 
 const ProductList = ({ onDelete, products }) => {

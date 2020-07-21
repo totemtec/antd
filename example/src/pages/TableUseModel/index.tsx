@@ -1,3 +1,4 @@
+import React from 'react';
 import { useModel } from 'umi';
 import ProductList from './ProductList';
 

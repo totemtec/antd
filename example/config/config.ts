@@ -65,6 +65,12 @@ export default defineConfig({
       ],
     },
     {
+      path: '/empty',
+      name: '空页面',
+      icon: 'smile',
+      component: './Empty',
+    },
+    {
       name: 'list.table-list',
       icon: 'table',
       routes: [
