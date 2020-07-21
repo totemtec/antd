@@ -1,5 +1,5 @@
 import { useModel } from 'umi';
-import ProductList from '@/components/ProductList';
+import ProductList from './ProductList';
 
 const Products = () => {
   const { dataSource, reload, deleteProducts } = useModel('useProductList');
