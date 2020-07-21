@@ -40,7 +40,7 @@ const TableUseRequest: React.FC<{}> = () => {
 
   return (
     <PageContainer>
-      <Table dataSource={data} columns={columns} />
+      <Table loading={loading} dataSource={data} columns={columns} />
     </PageContainer>
   );
 };

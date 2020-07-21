@@ -77,6 +77,7 @@ export default defineConfig({
       component: './Model',
     },
     {
+      path: '/table',
       name: 'list.table-list',
       icon: 'table',
       routes: [
@@ -103,6 +104,31 @@ export default defineConfig({
           name: '高级表格',
           icon: 'smile',
           component: './TablePro',
+        },
+      ],
+    },
+    {
+      path: '/form',
+      name: 'form',
+      icon: 'form',
+      routes: [
+        {
+          path: '/form/basic',
+          name: '基础表单',
+          icon: 'smile',
+          component: './FormBasic',
+        },
+        {
+          path: '/form/useForm',
+          name: '表单方法调用',
+          icon: 'smile',
+          component: './FormUseForm',
+        },
+        {
+          path: '/form/layout',
+          name: '表单布局',
+          icon: 'smile',
+          component: './FormLayout',
         },
       ],
     },

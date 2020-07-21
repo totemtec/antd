@@ -2,7 +2,7 @@ import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Table } from 'antd';
 
-const TableList: React.FC<{}> = () => {
+const TableBasic: React.FC<{}> = () => {
   const data: any[] = [
     {
       name: 'TradeCode 99',
@@ -45,4 +45,4 @@ const TableList: React.FC<{}> = () => {
   );
 };
 
-export default TableList;
+export default TableBasic;

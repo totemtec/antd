@@ -4,11 +4,11 @@ import { DefaultFooter } from '@ant-design/pro-layout';
 
 export default () => (
   <DefaultFooter
-    copyright="2019 蚂蚁金服体验技术部出品"
+    copyright="2020 图腾泰科"
     links={[
       {
         key: 'Ant Design Pro',
-        title: 'Ant Design Pro',
+        title: 'Ant Design Pro V5',
         href: 'https://pro.ant.design',
         blankTarget: true,
       },
@@ -20,7 +20,7 @@ export default () => (
       },
       {
         key: 'Ant Design',
-        title: 'Ant Design',
+        title: 'Ant Design V4.3',
         href: 'https://ant.design',
         blankTarget: true,
       },
