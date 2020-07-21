@@ -71,6 +71,12 @@ export default defineConfig({
       component: './Empty',
     },
     {
+      path: '/model',
+      name: '全局数据流',
+      icon: 'smile',
+      component: './Model',
+    },
+    {
       name: 'list.table-list',
       icon: 'table',
       routes: [
