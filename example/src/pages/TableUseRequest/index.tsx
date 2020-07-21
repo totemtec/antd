@@ -5,7 +5,7 @@ import { Table } from 'antd';
 import { useRequest } from 'umi';
 import { queryRule } from './service';
 
-const TableList: React.FC<{}> = () => {
+const TableUseRequest: React.FC<{}> = () => {
   const { data, loading } = useRequest(() => {
     let params = {
       current: 1,
@@ -45,4 +45,4 @@ const TableList: React.FC<{}> = () => {
   );
 };
 
-export default TableList;
+export default TableUseRequest;
