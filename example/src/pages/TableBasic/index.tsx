@@ -5,11 +5,13 @@ import { Table } from 'antd';
 const TableBasic: React.FC<{}> = () => {
   const data: any[] = [
     {
+      key: 99,
       name: 'TradeCode 99',
       status: 0,
       updatedAt: '2020-07-20T16:39:01.254Z',
     },
     {
+      key: 98,
       name: 'TradeCode 98',
       status: 3,
       updatedAt: '2020-07-20T16:39:01.254Z',
@@ -20,6 +22,13 @@ const TableBasic: React.FC<{}> = () => {
     {
       title: '规则名称',
       dataIndex: 'name',
+      align: 'center',
+      render: (text, record) => {
+        console.log(text);
+        return (
+          <div style={{textAlign: 'left'}}>{text}</div>
+        );
+      },
     },
     {
       title: '状态',
