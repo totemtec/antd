@@ -14,15 +14,15 @@ export async function getInitialState(): Promise<{
 }> {
   // 如果是登录页面，不执行
   if (history.location.pathname !== '/user/login') {
-    try {
-      const currentUser = await queryCurrent();
-      return {
-        currentUser,
-        settings: defaultSettings,
-      };
-    } catch (error) {
-      history.push('/user/login');
-    }
+    // try {
+    //   const currentUser = await queryCurrent();
+    //   return {
+    //     currentUser,
+    //     settings: defaultSettings,
+    //   };
+    // } catch (error) {
+    //   history.push('/user/login');
+    // }
   }
   return {
     settings: defaultSettings,

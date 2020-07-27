@@ -56,10 +56,11 @@ const Login: React.FC<{}> = () => {
 
   const handleSubmit = async (values: LoginParamsType) => {
     setSubmitting(true);
-    try {
+    // try {
       // 登录
       const msg = await fakeAccountLogin({ ...values, type });
-      if (msg.status === 'ok') {
+      // if (msg.status === 'ok') 
+      if (true) {
         message.success('登录成功！');
         replaceGoto();
         setTimeout(() => {
@@ -69,10 +70,10 @@ const Login: React.FC<{}> = () => {
       }
       // 如果失败去设置用户错误信息
       setUserLoginState(msg);
-    } catch (error) {
-      message.error('登录失败，请重试！');
-    }
-    setSubmitting(false);
+    // } catch (error) {
+    //   message.error('登录失败，请重试！');
+    // }
+    // setSubmitting(false);
   };
 
   const { status, type: loginType } = userLoginState;
