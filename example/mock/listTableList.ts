@@ -45,46 +45,46 @@ function getRule(req: Request, res: Response, u: string) {
     ((current as number) - 1) * (pageSize as number),
     (current as number) * (pageSize as number),
   );
-  const sorter = JSON.parse(params.sorter as any);
-  if (sorter) {
-    dataSource = dataSource.sort((prev, next) => {
-      let sortNumber = 0;
-      Object.keys(sorter).forEach((key) => {
-        if (sorter[key] === 'descend') {
-          if (prev[key] - next[key] > 0) {
-            sortNumber += -1;
-          } else {
-            sortNumber += 1;
-          }
-          return;
-        }
-        if (prev[key] - next[key] > 0) {
-          sortNumber += 1;
-        } else {
-          sortNumber += -1;
-        }
-      });
-      return sortNumber;
-    });
-  }
-  if (params.filter) {
-    const filter = JSON.parse(params.filter as any) as {
-      [key: string]: string[];
-    };
-    if (Object.keys(filter).length > 0) {
-      dataSource = dataSource.filter((item) => {
-        return Object.keys(filter).some((key) => {
-          if (!filter[key]) {
-            return true;
-          }
-          if (filter[key].includes(`${item[key]}`)) {
-            return true;
-          }
-          return false;
-        });
-      });
-    }
-  }
+  // const sorter = JSON.parse(params.sorter as any);
+  // if (sorter) {
+  //   dataSource = dataSource.sort((prev, next) => {
+  //     let sortNumber = 0;
+  //     Object.keys(sorter).forEach((key) => {
+  //       if (sorter[key] === 'descend') {
+  //         if (prev[key] - next[key] > 0) {
+  //           sortNumber += -1;
+  //         } else {
+  //           sortNumber += 1;
+  //         }
+  //         return;
+  //       }
+  //       if (prev[key] - next[key] > 0) {
+  //         sortNumber += 1;
+  //       } else {
+  //         sortNumber += -1;
+  //       }
+  //     });
+  //     return sortNumber;
+  //   });
+  // }
+  // if (params.filter) {
+  //   const filter = JSON.parse(params.filter as any) as {
+  //     [key: string]: string[];
+  //   };
+  //   if (Object.keys(filter).length > 0) {
+  //     dataSource = dataSource.filter((item) => {
+  //       return Object.keys(filter).some((key) => {
+  //         if (!filter[key]) {
+  //           return true;
+  //         }
+  //         if (filter[key].includes(`${item[key]}`)) {
+  //           return true;
+  //         }
+  //         return false;
+  //       });
+  //     });
+  //   }
+  // }
 
   if (params.name) {
     dataSource = dataSource.filter((data) => data.name.includes(params.name || ''));
