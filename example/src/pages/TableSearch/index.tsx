@@ -34,7 +34,7 @@ const TableSearch: React.FC<{}> = () => {
         <Form
           layout="inline"
           onFinish={onFinish} >
-          <Form.Item label="用户名" name="username">
+          <Form.Item label="用户名" name="name">
             <Input placeholder="用户名" />
           </Form.Item>
           <Form.Item {...buttonItemLayout}>

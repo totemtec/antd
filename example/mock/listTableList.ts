@@ -67,7 +67,7 @@ function getRule(req: Request, res: Response, u: string) {
   //     return sortNumber;
   //   });
   // }
-  // if (params.filter) {
+  // if (params.name) {
   //   const filter = JSON.parse(params.filter as any) as {
   //     [key: string]: string[];
   //   };
