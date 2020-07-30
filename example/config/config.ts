@@ -99,18 +99,18 @@ export default defineConfig({
           icon: 'smile',
           component: './TableUseModel',
         },
-        {
-          path: '/table/form',
-          name: 'useFormTable',
-          icon: 'smile',
-          component: './TableUseFormTable',
-        },
         // {
-        //   path: '/table/search',
-        //   name: '表单搜索',
+        //   path: '/table/form',
+        //   name: 'useFormTable',
         //   icon: 'smile',
-        //   component: './TableSearch',
+        //   component: './TableUseFormTable',
         // },
+        {
+          path: '/table/search',
+          name: '表单搜索',
+          icon: 'smile',
+          component: './TableSearch',
+        },
         {
           path: '/table/pro',
           name: '高级表格',
