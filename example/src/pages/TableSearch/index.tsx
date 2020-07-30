@@ -10,11 +10,6 @@ const TableSearch: React.FC<{}> = () => {
     paginated: true,
   })
 
-  const onFinish = values => {
-    console.log('查询表单提交:', values);
-    run(values);
-  };
-
   const columns = [
     {
       title: '规则名称',
@@ -23,17 +18,13 @@ const TableSearch: React.FC<{}> = () => {
   ];
 
   const buttonItemLayout = { wrapperCol: { span: 14, offset: 4 }, };
-
-  if(pagination) {
-    console.log(pagination);
-  }
     
   return (
     <PageContainer>
       <Card style={{ marginBottom: 16 }}>
         <Form
           layout="inline"
-          onFinish={onFinish} >
+          onFinish={run} >
           <Form.Item label="用户名" name="name">
             <Input placeholder="用户名" />
           </Form.Item>
