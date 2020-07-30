@@ -71,10 +71,10 @@ export default defineConfig({
       component: './Empty',
     },
     {
-      path: '/model',
+      path: '/global',
       name: '全局数据流',
       icon: 'smile',
-      component: './Model',
+      component: './GlobalData',
     },
     {
       path: '/table',
@@ -141,6 +141,25 @@ export default defineConfig({
           name: '表单布局',
           icon: 'smile',
           component: './FormLayout',
+        },
+      ],
+    },
+    {
+      path: '/modal',
+      name: '对话框',
+      icon: 'form',
+      routes: [
+        {
+          path: '/modal/basic',
+          name: '基本用法',
+          icon: 'smile',
+          component: './ModalBasic',
+        },
+        {
+          path: '/modal/async',
+          name: '异步提交',
+          icon: 'smile',
+          component: './ModalAsync',
         },
       ],
     },

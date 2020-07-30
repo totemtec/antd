@@ -7,7 +7,7 @@ const Products = () => {
   return (
     <div>
       <a onClick={() => reload()}>reload</a>
-      <ProductList onDelete={deleteProducts} products={dataSource} />
+      <ProductList onDelete={deleteProducts} products={dataSource.data} />
     </div>
   );
 };

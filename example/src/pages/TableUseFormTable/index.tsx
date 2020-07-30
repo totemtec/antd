@@ -1,7 +1,7 @@
 import React from 'react';
 import { useFormTable } from 'sunflower-antd';
 import { Input, Button, Table, Form } from 'antd';
-import { queryRule } from './service'
+import { queryRule } from '../../services/demo'
 
 // 参考文档
 // https://github.com/ant-design/sunflower/blob/master/src/useFormTable/index.zh-CN.md
