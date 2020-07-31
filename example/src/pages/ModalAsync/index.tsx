@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Modal, Button } from 'antd';
 import { sleep } from '../../utils/utils';
-import { queryRule } from '../../services/demo';
+import { queryRule } from '../../services/service';
 
 const ModalAsync: React.FC<{}> = () => {
 

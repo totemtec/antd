@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Modal, Form, Input, Button, message } from 'antd';
 import { sleep } from '../../../utils/utils';
-import { addRule } from '../../../services/service';
+import { updateRule } from '../../../services/service';
 
-const CreateForm: React.FC<{}> = (props) => {
+const UpdateForm: React.FC<{}> = (props) => {
 
-  const { visible, onCancel, onSuccess } = props;
+  const { visible, onCancel, onSuccess, values } = props;
 
   const [ loading, setLoading ] = useState<boolean>(false);
   
-  const onSubmit = async (values) => {
+  const onSubmit = async (params) => {
     // 提交按钮禁用，开始转圈圈
     setLoading(true);
 
@@ -17,23 +17,24 @@ const CreateForm: React.FC<{}> = (props) => {
     //TODO: ...
 
     try {
-      //网络提交数据
-      const response = await addRule(values);
+      //网络提交数据，更新需要把ID字段加上
+      const updateParams = {...params, key:values.key}
+      const response = await updateRule(updateParams);
 
       //这里是模拟慢速网络请求，真实生产环境中不需要
       await sleep(2000);
 
       if (response) {
-        message.success("创建成功");
+        message.success("更新成功");
 
-        //回调列表，告诉列表新对象创建成功了，隐藏对话框，刷新列表
+        //回调列表，告诉列表更新成功了，隐藏对话框，刷新列表
         onSuccess();
       } else {
-        message.error("添加失败，请稍后重试");
+        message.error("更新失败，请稍后重试");
       }
     } catch (error) {
       console.log("发生错误: " + error);
-      message.error("添加失败: " + error);
+      message.error("更新失败: " + error);
     } finally {
       setLoading(false);
     }
@@ -50,7 +51,7 @@ const CreateForm: React.FC<{}> = (props) => {
     <Modal
       destroyOnClose
       maskClosable={false}
-      title="新建规则"
+      title="更新规则"
       visible={visible}
       onCancel={onCancel}
       footer={null}
@@ -58,9 +59,13 @@ const CreateForm: React.FC<{}> = (props) => {
 
       <Form
         {...formItemLayout}
-        name="modalCreate"
+        name="modalUpdate"
         layout="horizontal"
         onFinish={onSubmit}
+        initialValues={{
+          name: values.name,
+          desc: values.desc,
+        }}
       >
 
         <Form.Item label="规则名称" name="name" >
@@ -79,4 +84,4 @@ const CreateForm: React.FC<{}> = (props) => {
   );
 };
 
-export default CreateForm;
+export default UpdateForm;

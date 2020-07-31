@@ -3,7 +3,7 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { Table } from 'antd';
 
 import { useRequest } from 'umi';
-import { queryRule } from '../../services/demo';
+import { queryRule } from '../../services/service';
 
 const TableUseRequest: React.FC<{}> = () => {
   const { data, loading } = useRequest(() => {

@@ -147,7 +147,7 @@ export default defineConfig({
     {
       path: '/modal',
       name: '对话框',
-      icon: 'form',
+      icon: 'fileDone',
       routes: [
         {
           path: '/modal/basic',
@@ -163,9 +163,15 @@ export default defineConfig({
         },
         {
           path: '/modal/create',
-          name: '新增对话框',
+          name: '对话框新增',
           icon: 'smile',
           component: './ModalCreate',
+        },
+        {
+          path: '/modal/update',
+          name: '对话框更新',
+          icon: 'smile',
+          component: './ModalUpdate',
         },
       ],
     },

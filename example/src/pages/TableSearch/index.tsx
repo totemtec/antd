@@ -2,7 +2,7 @@ import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Table, Form, Input, Button, Card} from 'antd';
 import { useRequest } from 'umi';
-import { queryRule } from '../../services/demo';
+import { queryRule } from '../../services/service';
 
 const TableSearch: React.FC<{}> = () => {
 
