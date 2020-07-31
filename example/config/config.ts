@@ -161,6 +161,12 @@ export default defineConfig({
           icon: 'smile',
           component: './ModalAsync',
         },
+        {
+          path: '/modal/create',
+          name: '新增对话框',
+          icon: 'smile',
+          component: './ModalCreate',
+        },
       ],
     },
     {

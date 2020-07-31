@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import { Modal, Button } from 'antd';
+import { sleep } from '../../utils/utils';
 import { queryRule } from '../../services/demo';
 
 const ModalAsync: React.FC<{}> = () => {
@@ -18,16 +19,12 @@ const ModalAsync: React.FC<{}> = () => {
     setVisible(false);
   };
 
-  const sleep = (ms) => {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   const handleSubmit = async () => {
     setModalText("数据请求完成后关闭");
     setConfirmLoading(true);
 
     try {
-      await sleep(3000);
+      await sleep(2000);
       const success = await queryRule();
       setConfirmLoading(false);
       setVisible(false);

@@ -36,3 +36,8 @@ export const getPageQuery = () => {
 
   return {};
 };
+
+
+export const sleep = (ms) => {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
